@@ -49,6 +49,9 @@ function pass_Verify(){
         return true;
     }
 }
+email_error.onblur()= function(){
+    email_error.style.display="none";
+}
 /*function validated(){
 	if (email.value.length < 9) {
 		email.style.border = "1px solid red";

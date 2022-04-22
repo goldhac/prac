@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name ="viewpoint" content="width=device-width, initial-scale=1.0">
+	<title>Validated Login Form</title>
+	<link rel="stylesheet" href="register.css">
+	
+</head>
+<body>
+<div id="top_info"> <a href="" class="FL_top"> Login </a>
+		<a href="" class="FL_top"> About Us</a>
+			<a href="" class="FL_top"> Contact </a></div>
+	
+			  <img src="images/logo 2.png" class="arravo logo" id="loginlogo" title="loho">
+
+	<div class="container"> 
+		 
+	      	
+
+			  <h1 id="sign_text">SIGN UP</h1>
+			  
+		<form class="login_form" id="signupform">
+
+			<input autocomplete="off" type="text" id="Fname" placeholder="Enter First Name" class="input" autofocus="off">
+
+
+			
+			<input autocomplete="off" type="text" id="Lname" placeholder="Enter Last Name" class="input" autofocus="off">
+
+              <input autocomplete="off" type="text" id="pnumber" placeholder="Enter Phone number" class="input" autofocus="off">
+			
+			<div>
+
+				<input autocomplete="off" type="text" id="email" placeholder="Enter Email " class="input" autofocus="off">
+			</div>
+			
+			<div id="email_error">Please fill up your Email or Phone</div>
+			
+		
+			<div> <input type="password" id="password" placeholder="Password" class="input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  autocomplete="off" autofocus="off"></div>
+			
+			<div id="pass_error">Please fill up your Password</div> 
+			
+			<div id="message">
+			
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+	
+	
+	
+</div>
+
+			<div class="bottom_part"> 
+			<button type="submit" id="butten">Sign Up</button>
+
+    
+
+       <b> <div id="last_line">   <a href="" class="help" id="need_help">NEED  HELP?</a></div></b>
+
+       </div>
+             </form>
+			
+	</div>
+					<div id="Left_info"> <a href="" class="FL"> About Us </a>
+		<a href="" class="FL"> Privacy Policy</a>
+			<a href="" class="FL"> Terms Of Use</a></div>
+
+			<div id="Right_Info">  ©️ 2022 Key. All Rights Reserved | Design By Nwobu
+
+
+			 </div>
+
+
+
+ 
+ 
+
+
+			 <script type="module">
+				// Import the functions you need from the SDKs you need
+				import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+				import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
+
+				// TODO: Add SDKs for Firebase products that you want to use
+				// https://firebase.google.com/docs/web/setup#available-libraries
+			  
+				// Your web app's Firebase configuration
+				const firebaseConfig = {
+				  apiKey: "AIzaSyAdp5lkmOZrEhggQNVZP1T_W3pFVmETIrA",
+				  authDomain: "authentication-arravo.firebaseapp.com",
+				  projectId: "authentication-arravo",
+				  storageBucket: "authentication-arravo.appspot.com",
+				  messagingSenderId: "166991016667",
+				  appId: "1:166991016667:web:5d20d614b5ab2d10e712fe"
+				};
+			  
+				// Initialize Firebase
+				const app = initializeApp(firebaseConfig);
+				const auth = getAuth();
+
+				const submit = document.getElementById("butten");
+				submit.addEventListener('click',(e)=>{
+
+					var emailt = document.getElementById("email").value;
+					
+					var pass = document.getElementById("password").value;
+
+					createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+	
+    // ...
+	alert("user created");
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+				})
+				
+			  </script>
+</body>
+
+		
+	                                                                                
+</html>

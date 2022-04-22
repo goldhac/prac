@@ -1,0 +1,14 @@
+{
+  "name": "crr8abhm",
+  "version": "1.0.0",
+  "description": "## Supporting Scrimba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gold Nwobu",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^9.6.11"
+  }
+}
